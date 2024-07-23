@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot name="factomove" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<xacro:include filename="$(find factomove)/urdf/factomove.gazebo"/>
+<xacro:include filename="$(find factomove_description)/urdf/factomove.gazebo"/>
   
 <link name="base_footprint">
 </link>

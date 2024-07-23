@@ -6,7 +6,7 @@
     3D models of the Factomove for simulation and visualization
   </description>
   <license>Apache 2.0</license>
-  <author email="fedor2847@fmail.com">Fedor</author>
+  <maintainer email="fedor2847@fmail.com">Fedor</maintainer>
   <buildtool_depend>catkin</buildtool_depend>
   <depend>urdf</depend>
   <depend>xacro</depend>
