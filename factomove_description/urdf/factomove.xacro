@@ -102,7 +102,7 @@
     <child
       link="mid_left_wheel_link" />
     <axis
-      xyz="0 -1 0" />
+      xyz="0 1 0" />
     <limit
       effort="10"
       velocity="10" />
@@ -161,7 +161,7 @@
     <child
       link="mid_right_wheel_link" />
     <axis
-      xyz="0 -1 0" />
+      xyz="0 1 0" />
     <limit
       effort="10"
       velocity="10" />
