@@ -41,8 +41,8 @@ void factomoveTeleop::joyCallback(const sensor_msgs::Joy::ConstPtr& joy) {
 		double twist_linear_x_vel =  _linear_speed_scale * joy->axes[PS4_AXIS_STICK_LEFT_UPWARDS];
 		double twist_angular_z_vel = _angular_speed_scale * joy->axes[PS4_AXIS_STICK_RIGHT_LEFTWARDS];
 
-		twist.linear.x = -twist_linear_x_vel;
-		twist.angular.z = -twist_angular_z_vel;
+		twist.linear.x = twist_linear_x_vel;
+		twist.angular.z = twist_angular_z_vel;
 
 		if (twist_linear_x_vel == 0 && twist_angular_z_vel == 0) {
 				if (_last_zero_twist == false) {
