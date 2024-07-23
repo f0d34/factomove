@@ -1,0 +1,14 @@
+<launch>
+  <arg name="joy_topic" default="joy" />
+  <arg name="joy_dev" default="/dev/input/js0" />
+  <node pkg="joy" type="joy_node" name="joy_node">
+    <param name="dev" value="$(arg joy_dev)" />
+    <param name="deadzone" value="0.05" />
+    <param name="autorepeat_rate" value="20" />
+    <remap from="joy" to="$(arg joy_topic)" />
+  </node>
+	<node pkg="factomove_teleop" type="factomove_teleop" name="factomove_teleop" >
+		<param name="linear_speed_scale" type="double" value="3"/> 
+		<param name="angular_speed_scale" type="double" value="7"/>
+	</node>
+</launch>
