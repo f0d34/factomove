@@ -50,7 +50,7 @@
       <rightJoint>mid_right_wheel_joint</rightJoint>
       <wheelSeparation>0.5583</wheelSeparation>
       <wheelDiameter>0.16</wheelDiameter>
-      <wheelAcceleration>5</wheelAcceleration>
+      <wheelAcceleration>1</wheelAcceleration>
       <wheelTorque>100</wheelTorque>
       <rosDebugLevel>na</rosDebugLevel>
     </plugin>
