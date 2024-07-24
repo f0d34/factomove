@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot name="factomove" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<xacro:include filename="$(find factomove_description)/urdf/factomove.gazebo"/>
+<xacro:include filename="$(find factomove_description)/urdf/factomove.gazebo.xacro"/>
+<xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
+
+<xacro:sensor_d435 name="realsense_d435" parent="base_link" >
+  <origin xyz="0.40 0 0" rpy="0 0 0" />
+</xacro:sensor_d435>
+
   
 <link name="base_footprint">
 </link>
