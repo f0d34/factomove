@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<link name="base_scan">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.05" radius="0.02"/>
+        </geometry>
+  </collision> 
+
+  <visual>
+        <origin xyz="0 0 -0.015" rpy="0 0 0"/>
+        <geometry>
+            <mesh filename="package://factomove_description/meshes/hokuyo.dae"/> 
+        </geometry>
+  </visual>
+
+  <inertial>
+        <mass value="1e-5" />
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+  </inertial> 
+</link>
+
+  <joint name="scan_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0 0 0.025" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="base_scan"/>
+  </joint> 
+
+</robot>

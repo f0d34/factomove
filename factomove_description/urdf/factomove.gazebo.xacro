@@ -1,96 +1,16 @@
 <?xml version="1.0"?>
 
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<!-- <gazebo>
-<gazebo reference="mid_left_wheel_link">
-    <mu1>0.1</mu1>
-    <mu2>0.1</mu2>
-    <kp>500000.0</kp>
-    <kd>10.0</kd>
-    <minDepth>0.001</minDepth>
-    <maxVel>0.1</maxVel>
-    <fdir1>1 0 0</fdir1>
-    <material>Gazebo/FlatBlack</material>
-</gazebo>
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro"/>
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435.gazebo.xacro"/>
+  <xacro:sensor_d435 name="realsense_d435" parent="base_link" >
+    <origin xyz="0.36 0 -0.025" rpy="0 0 0" />
+  </xacro:sensor_d435>
 
-<gazebo reference="mid_right_wheel_link">
-    <mu1>0.1</mu1>
-    <mu2>0.1</mu2>
-    <kp>500000.0</kp>
-    <kd>10.0</kd>
-    <minDepth>0.001</minDepth>
-    <maxVel>0.1</maxVel>
-    <fdir1>1 0 0</fdir1>
-    <material>Gazebo/FlatBlack</material>
-</gazebo> -->
-<!-- <gazebo reference="front_left_wheel_link">
-</gazebo>
-<gazebo reference="back_left_wheel_link">
-</gazebo>
-<gazebo reference="front_right_wheel_link">
-</gazebo>
-<gazebo reference="back_right_wheel_link">
-</gazebo> -->
+  <xacro:include filename="$(find factomove_description)/urdf/hokuyo_lidar.urdf.xacro"/>
+  <xacro:include filename="$(find factomove_description)/urdf/hokuyo_lidar.gazebo.xacro"/>
 
-
-<xacro:include filename="$(find realsense2_description)/urdf/_d435.gazebo.xacro" />
-
-  <gazebo>
-    <plugin name="factomove_controller" filename="libgazebo_ros_diff_drive.so">
-      <commandTopic>cmd_vel</commandTopic>
-      <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
-      <odometrySource>world</odometrySource>
-      <publishOdomTF>true</publishOdomTF>
-      <robotBaseFrame>base_footprint</robotBaseFrame>
-      <publishWheelTF>false</publishWheelTF>
-      <publishTf>true</publishTf>
-      <publishWheelJointState>true</publishWheelJointState>
-      <legacyMode>false</legacyMode>
-      <updateRate>30</updateRate>
-      <leftJoint>mid_left_wheel_joint</leftJoint>
-      <rightJoint>mid_right_wheel_joint</rightJoint>
-      <wheelSeparation>0.5583</wheelSeparation>
-      <wheelDiameter>0.16</wheelDiameter>
-      <wheelAcceleration>1</wheelAcceleration>
-      <wheelTorque>100</wheelTorque>
-      <rosDebugLevel>na</rosDebugLevel>
-    </plugin>
-  </gazebo>
-
-<!-- hokuyo --> 
-  <gazebo reference="base_scan">
-   <material>Gazebo/FlatBlack</material> 
-    <sensor type="ray" name="lds_lfcd_sensor">
-      <pose>0 0 0 0 0 0</pose>
-      <visualize>true</visualize>
-      <update_rate>5</update_rate>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>360</samples>
-            <resolution>1</resolution>
-            <min_angle>0.0</min_angle>
-            <max_angle>6.28319</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.03</min>
-          <max>7</max>
-          <resolution>0.015</resolution>
-        </range>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.01</stddev>
-        </noise>
-      </ray>
-      <plugin name="gazebo_ros_lds_lfcd_controller" filename="libgazebo_ros_laser.so">
-        <topicName>scan</topicName>
-        <frameName>base_scan</frameName>
-      </plugin>
-    </sensor>
-  </gazebo>
+  <xacro:include filename="$(find factomove_description)/urdf/diff_drive_controller.gazebo.xacro"/>
 
 </robot>
