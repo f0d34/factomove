@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="x_pos" default="0.0"/>
+  <arg name="y_pos" default="0.0"/>
+  <arg name="z_pos" default="1.0"/>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+            <arg name="world_name" value="$(find factomove_simulation)/worlds/test_flat.world"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+    </include>
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
+<param name="robot_description" command="$(find xacro)/xacro '$(find factomove_description)/urdf/factomove.xacro'"/>
+<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model factomove -param robot_description -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos)"/>
+
+<node name="rviz" pkg="rviz" type="rviz" args="-d $(find factomove_description)/rviz/model.rviz"/>
+<!-- <include file="$(find factomove_teleop)/launch/factomove_teleop.launch"/> -->
+<include file="$(find factomove_slam)/launch/factomove_gmapping.launch"/>
+<include file="$(find factomove_navigation)/launch/move_base.launch"/>
+</launch>

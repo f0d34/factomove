@@ -1,0 +1,28 @@
+  <launch>
+  <arg name="use_simulation" default="true"/>
+  <group if="$(arg use_simulation)">
+  <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
+    <!-- delete_db_on_start erase prior SLAM result -->
+    <arg name="args"                    value="--delete_db_on_start"/>
+    <arg name="rtabmapviz"              value="true" />
+    <arg name="rviz"                    value="false" />
+    <arg name="queue_size"              value="100"/>
+    <arg name="publish_tf_odom"          value="true"/>
+    <arg name="publish_tf_map"          value="true"/>
+    <arg name="rgbd_sync"               default="false"/>         <!-- pre-sync rgb_topic, depth_topic, camera_info_topic -->
+    <arg name="approx_rgbd_sync"        default="true"/>          <!-- false=exact synchronization -->    
+    
+    <!-- realsense topic -->
+    <arg name="rgb_topic" value="/camera/color/image_raw" />
+    <arg name="depth_topic" value="/camera/depth/image_raw"/>
+    <arg name="camera_info_topic" value="/camera/color/camera_info"/>
+    <arg name="depth_camera_info_topic" value="/camera/depth/camera_info" />
+    <!-- frame -->
+    <arg name="frame_id"                value="base_footprint"/>
+    <arg name="odom_frame_id"           value="odom"/>
+    <arg name="map_frame_id"            value="map"/>
+    <arg name="vo_frame_id"              value="odom"/>
+
+  </include>  
+  </group>
+</launch>

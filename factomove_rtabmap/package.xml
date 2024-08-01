@@ -1,15 +1,13 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>factomove_navigation</name>
+  <name>factomove_rtabmap</name>
   <version>0.0.1</version>
   <description>
-    The factomove_navigation provides roslaunch scripts for starting the navigation.
+    The mapping by depth camera.
   </description>
   <license>Apache 2.0</license>
    <maintainer email="fedor2847@gmail.com">Fedor</maintainer>
   <maintainer email="vladparhachev777@gmail.com">Vladislav</maintainer>
   <buildtool_depend>catkin</buildtool_depend>
-  <exec_depend>amcl</exec_depend>
-  <exec_depend>map_server</exec_depend>
-  <exec_depend>move_base</exec_depend>
+  <exec_depend>rtabmap_ros</exec_depend>
 </package>
