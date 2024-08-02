@@ -8,3 +8,5 @@ sudo apt install ros-noetic-joy
 sudo apt install ros-noetic-rtabmap-ros
 
 git clone https://github.com/pal-robotics/realsense_gazebo_plugin
+
+git clone https://github.com/aws-robotics/aws-robomaker-small-warehouse-world.git
