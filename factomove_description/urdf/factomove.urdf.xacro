@@ -53,7 +53,7 @@
   </link>
 
   <link 
-    name="mid_left_wheel_link">
+    name="left_wheel">
     <inertial>
       <origin
         xyz="-6.3781E-06 -0.027802 1.0717E-06"
@@ -94,7 +94,7 @@
   </link>
   
   <joint
-    name="mid_left_wheel_joint"
+    name="left_wheel"
     type="continuous">
     <origin
       xyz="0 0.224 -0.141"
@@ -102,7 +102,7 @@
     <parent
       link="base_link" />
     <child
-      link="mid_left_wheel_link" />
+      link="left_wheel" />
     <axis
       xyz="0 1 0" />
     <limit
@@ -114,7 +114,7 @@
   </joint>
 
   <link
-    name="mid_right_wheel_link">
+    name="right_wheel">
     <inertial>
       <origin
         xyz="3.043E-06 0.027802 -5.7069E-06"
@@ -155,7 +155,7 @@
   </link>
 
   <joint
-    name="mid_right_wheel_joint"
+    name="right_wheel"
     type="continuous">
     <origin
       xyz="0 -0.224 -0.141"
@@ -163,7 +163,7 @@
     <parent
       link="base_link" />
     <child
-      link="mid_right_wheel_link" />
+      link="right_wheel" />
     <axis
       xyz="0 1 0" />
     <limit
