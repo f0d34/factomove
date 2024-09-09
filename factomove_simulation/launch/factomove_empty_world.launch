@@ -12,9 +12,24 @@
         <arg name="debug" value="false"/>
     </include> -->
 
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/> -->
+
+
+
+
+    <param name="robot_description" command="$(find xacro)/xacro '$(find factomove_description)/urdf/factomove.urdf.xacro'"/>
+
+    <arg name="multi_robot_name" default=""/>
+    <arg name="use_tf_static" default="false"/> 
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+      <param name="publish_frequency" type="double" value="50.0" />
+      <param name="tf_prefix" value="$(arg multi_robot_name)"/>
+      <param name="use_tf_static" value="$(arg use_tf_static)"/>
+    </node>
+
     <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
-    <param name="robot_description" command="$(find xacro)/xacro '$(find factomove_description)/urdf/factomove.xacro'"/>
+
     <!-- <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model factomove -param robot_description -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos)"/> -->
 
     <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find factomove_description)/rviz/model.rviz"/> -->
