@@ -20,6 +20,6 @@
 
 <node name="rviz" pkg="rviz" type="rviz" args="-d $(find factomove_description)/rviz/model.rviz"/>
 <!-- <include file="$(find factomove_teleop)/launch/factomove_teleop.launch"/> -->
-<include file="$(find factomove_slam)/launch/factomove_gmapping.launch"/>
-<include file="$(find factomove_navigation)/launch/move_base.launch"/>
+<!-- <include file="$(find factomove_slam)/launch/factomove_gmapping.launch"/>
+<include file="$(find factomove_navigation)/launch/move_base.launch"/> -->
 </launch>
