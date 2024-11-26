@@ -30,7 +30,7 @@ factomoveTeleop::factomoveTeleop(ros::NodeHandle private_node) :
 		_private_node(private_node) {
 		_private_node.param<double>("linear_speed_scale", _linear_speed_scale, 0.0);
 		_private_node.param<double>("angular_speed_scale", _angular_speed_scale, 0.0);
-		_cmd_vel_pub = _node.advertise<geometry_msgs::Twist>("/cmd_vel", 1);
+		_cmd_vel_pub = _node.advertise<geometry_msgs::Twist>("/hoverboard_velocity_controller/cmd_vel", 1);
 		_joy_sub = _node.subscribe<sensor_msgs::Joy>("joy", 10, &factomoveTeleop::joyCallback, this);
 		ROS_INFO("factomove teleop node: Start");
 }
