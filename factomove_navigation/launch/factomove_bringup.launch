@@ -1,6 +1,5 @@
 <launch>
   <include file="$(find factomove_simulation)/launch/factomove_empty_world.launch"/>
-  <include file="$(find factomove_navigation)/launch/amcl.launch"/>
-  <include file="$(find factomove_navigation)/launch/move_base.launch"/>
+  <include file="$(find factomove_navigation)/launch/navigation.launch"/>
   <include file="$(find factomove_teleop)/launch/factomove_teleop.launch"/>
 </launch>

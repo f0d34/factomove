@@ -24,7 +24,7 @@
       <param name="tf_prefix" value="$(arg multi_robot_name)"/>
       <param name="use_tf_static" value="$(arg use_tf_static)"/>
     </node>
-  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
+  <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/> -->
     <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
     <include file="$(find factomove_scan_filter)/launch/factomove_scan_filter.launch"/>
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="false" />

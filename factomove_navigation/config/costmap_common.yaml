@@ -1,0 +1,24 @@
+footprint: [[-0.49, -0.36], [-0.49, 0.36], [0.56, 0.36], [0.56, -0.36]]
+robot_base_frame: base_footprint
+
+resolution: 0.025
+
+obstacle_range: 8.5
+raytrace_range: 9.0
+
+#layer definitions
+static:
+  map_topic: /map
+
+obstacles:
+  observation_sources: factomove_lidar
+
+  factomove_lidar:
+    data_type: LaserScan
+    clearing: true
+    marking: true
+    topic: scan_filtered
+    inf_is_valid: true
+
+inflation:
+  inflation_radius: 1.0
