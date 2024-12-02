@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="map_file" default="$(find factomove_navigation)/maps/map.yaml"/>
+  <arg name="map_file" default="$(find factomove_navigation)/maps/factory_map_full_last.yaml"/>
   <arg name="rvizconfig" default="$(find factomove_description)/rviz/factomove_rv.rviz" />
   <!-- <arg name="x_pos" default="0.0"/>
   <arg name="y_pos" default="0.0"/>

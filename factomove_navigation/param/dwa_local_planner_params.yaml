@@ -1,8 +1,8 @@
 DWAPlannerROS:
 
 # Robot Configuration Parameters
-  max_vel_x: 3
-  min_vel_x: -3
+  max_vel_x: 2
+  min_vel_x: -0.5
 
   max_vel_y: 0.0
   min_vel_y: 0.0
@@ -11,8 +11,8 @@ DWAPlannerROS:
   max_vel_trans:  0.26
   min_vel_trans:  0.13
 
-  max_vel_theta: 1.82
-  min_vel_theta: 0.9
+  max_vel_theta: 0.8
+  min_vel_theta: 0.2
 
   acc_lim_x: 2.5
   acc_lim_y: 0.0
@@ -23,8 +23,8 @@ DWAPlannerROS:
   latch_xy_goal_tolerance: false
 
 # Forward Simulation Parameters
-  xy_goal_tolerance: 0.1
-  yaw_goal_tolerance: 1
+  xy_goal_tolerance: 0.3
+  yaw_goal_tolerance: 0.5
 
   # Forward Simulation Parameters
   sim_time: 1.2
