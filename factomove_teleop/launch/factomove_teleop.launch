@@ -8,7 +8,7 @@
     <remap from="joy" to="$(arg joy_topic)" />
   </node>
 	<node pkg="factomove_teleop" type="factomove_teleop" name="factomove_teleop" >
-		<param name="linear_speed_scale" type="double" value="0.5"/> 
-		<param name="angular_speed_scale" type="double" value="0.5"/>
+		<param name="linear_speed_scale" type="double" value="0.4"/> 
+		<param name="angular_speed_scale" type="double" value="1"/>
 	</node>
 </launch>
