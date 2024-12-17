@@ -8,7 +8,7 @@
     <param name="base_frame" value="$(arg set_base_frame)"/>
     <param name="odom_frame" value="$(arg set_odom_frame)"/>
     <param name="map_frame"  value="$(arg set_map_frame)"/>
-    <remap from="scan" to="scan_filtered" />
+    <remap from="scan" to="scan" />
     <rosparam command="load" file="$(find factomove_slam)/config/gmapping_params.yaml" />
   </node>
 </launch>
